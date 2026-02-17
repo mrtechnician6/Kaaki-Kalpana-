@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अन्टीको सानो संसार</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fce4ec;
+            --text-color: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Mukta', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            scroll-behavior: smooth;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Music Controls */
+        #music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styling */
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .photo-container {
+            opacity: 0;
+            transform: scale(0.5) translateY(100px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .photo-container.show {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 8px solid white;
+        }
+
+        h1, h2 {
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            margin-top: 20px;
+        }
+
+        p {
+            color: white;
+            font-size: 1.2rem;
+            max-width: 600px;
+            background: rgba(0,0,0,0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        /* Fly Animations */
+        .fly-left { transform: translateX(-200%) rotate(-20deg); }
+        .fly-right { transform: translateX(200%) rotate(20deg); }
+        .show.fly-left, .show.fly-right { transform: translateX(0) rotate(0deg); }
+
+    </style>
+</head>
+<body>
+
+<button id="music-btn" onclick="toggleMusic()">🎵 Music On/Off</button>
+<audio id="bg-music" loop>
+    <source src="Our little world_ filled with big love❣️ हाम्रो आफ्नै सानो संसार_ मायाले भरिएको❣️ _n(.mp3" type="audio/mpeg">
+</audio>
+
+<section>
+    <div class="photo-container fly-left">
+        <img src="1771324457013.jpg" alt="Aunty First">
+        <h1>हाम्री प्यारी अन्टीको दरबार! 👑</h1>
+        <p>स्वागत छ! यो हाम्रो सानो संसार हो जहाँ प्रेम र हाँसोको कमी छैन।</p>
+    </div>
+</section>
+
+<section>
+    <div class="photo-container fly-right">
+        <img src="1771323360574.jpg" alt="Baby Girl">
+        <h2>नयाँ सदस्य: सानी राजकुमारी 🍼</h2>
+        <p>२ महिना भयो, तर घरको सबै नियम यिनकै चल्छ। रातभरि कसैलाई नसुताउने 'चिफ'!</p>
+    </div>
+</section>
+
+<section>
+    <div class="photo-container fly-left">
+        <img src="Snapchat-1173515763.jpg" alt="Son Photo">
+        <h2>हाम्रो जेठो युवराज 👦</h2>
+        <p>५ वर्षको बदमासी अनुभव! बहिनी आएपछि झन् ठुलो मान्छे पल्टिदै।</p>
+    </div>
+</section>
+
+<section>
+    <div class="photo-container fly-right">
+        <img src="1771323659556.jpg" alt="Uncle and Aunty">
+        <h2>पावर कपल: अंकल र अन्टी 💑</h2>
+        <p>अन्टीको अर्डर, अंकलको पालना—यसरी नै चल्छ हाम्रो घरको सरकार!</p>
+    </div>
+</section>
+
+<section>
+    <div class="photo-container fly-left">
+        <img src="1771323477535.jpg" alt="Son Photo 2">
+        <h2>उपद्रोको अर्को नमुना! 🔥</h2>
+        <p>घरलाई रमाइलो बनाउने असली जादुगर यिनै हुन्।</p>
+    </div>
+</section>
+
+<section>
+    <div class="photo-container fly-right">
+        <img src="IMG_20260217_162536.jpg" alt="Aunty Second">
+        <h2>सबैकी प्रिय अन्टी ❤️</h2>
+        <p>संसारकै सबैभन्दा राम्रो ममी र मायालु अन्टी। यो वेबसाइट तपाईँकै लागि एउटा सानो उपहार!</p>
+    </div>
+</section>
+
+<script>
+    // Music Toggle
+    var music = document.getElementById("bg-music");
+    function toggleMusic() {
+        return music.paused ? music.play() : music.pause();
+    }
+
+    // Intersection Observer for Surprise Animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.photo-container').forEach(container => {
+        observer.observe(container);
+    });
+</script>
+
+</body>
+</html>
